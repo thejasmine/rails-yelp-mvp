@@ -1,0 +1,21 @@
+<h1>Restaurnat Review</h1>
+<div class="review-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Review</th>
+        <th>Rating</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @restaurant.reviews.each do |review| %>
+          <td><%= review.content %></td>
+          <td><%= review.rating %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Add New Review', new_restaurant_review_path(@restaurant.id) %> | <%= link_to 'Back to Main', restaurants_path %>
+</div>
